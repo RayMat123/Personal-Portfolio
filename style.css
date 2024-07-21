@@ -165,8 +165,32 @@ section {
 #profile {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
   height: 80vh;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  
+}
+
+#profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/background.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.section__pic-container,
+.section__text {
+  position: relative;
+  z-index: 1;
 }
 
 .section__pic-container {
@@ -183,6 +207,7 @@ section {
 
 .section__text p {
   font-weight: 600;
+  color: #fff;
 }
 
 .section__text__p1 {
@@ -386,6 +411,7 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   height: 70vh;
 }
 
@@ -404,7 +430,7 @@ article .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 1rem;
 }
 
@@ -429,4 +455,32 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+
+/* In Development Project Popup */
+
+/* Popup container */
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+  padding: 20px;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
